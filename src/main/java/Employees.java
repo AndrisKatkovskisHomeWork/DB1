@@ -1,9 +1,9 @@
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
 @Table(name = "employees")
-
 
 public class Employees {
 
@@ -20,8 +20,32 @@ public class Employees {
     @Column(name = "hire_date")
     private String hireDate;
 
+    @ManyToMany(cascade = CascadeType.PERSIST)
+
+    @JoinTable(name = "employee_projects", joinColumns = {@JoinColumn(name = "emp_no")},
+
+            inverseJoinColumns = {@JoinColumn(name = "project_id")})
+
+    private List<Project> projectList;
+
+    public List<Project> getProjectList() {
+        return projectList;
+    }
+
+
+    public void setProjectList(List<Project> projectList) {
+        this.projectList = projectList;
+    }
+
     public Employees() {
     }
+
+    public Employees(String firstName, String lastName, char gender) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+    }
+
 
     @OneToOne(mappedBy = "emp")
     private EmploeesDetales empDetales;

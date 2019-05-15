@@ -18,6 +18,7 @@
         <mapping class="Products"/>
         <mapping class="EshopMain"/>
         <mapping class="Sku"/>
+        <mapping class="Project"/>
 
     </session-factory>
 </hibernate-configuration>
