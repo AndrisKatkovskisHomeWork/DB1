@@ -8,7 +8,7 @@ public class Salaries {
     @EmbeddedId
     private SalaryPK salaryPK;
 
-    @Column (name = "salary")
+    @Column(name = "salary")
     private int salary;
 
     @Column(name = "to_date")
@@ -25,9 +25,6 @@ public class Salaries {
         this.salaryPK = salaryPK;
     }
 
-
-
-
     public int getSalary() {
         return salary;
     }
@@ -35,8 +32,6 @@ public class Salaries {
     public void setSalary(int salary) {
         this.salary = salary;
     }
-
-
 
 
     public String getToDate() {
@@ -47,7 +42,4 @@ public class Salaries {
         this.toDate = toDate;
     }
 
-
 }
-
-

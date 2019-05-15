@@ -14,5 +14,10 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
         <mapping class="Employees"/>
         <mapping class="Salaries"/>
+        <mapping class="EmploeesDetales"/>
+        <mapping class="Products"/>
+        <mapping class="EshopMain"/>
+        <mapping class="Sku"/>
+
     </session-factory>
 </hibernate-configuration>

@@ -1,7 +1,4 @@
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -26,9 +23,19 @@ public class Employees {
     public Employees() {
     }
 
+    @OneToOne(mappedBy = "emp")
+    private EmploeesDetales empDetales;
 
     public int getEmpNo() {
         return empNo;
+    }
+
+    public EmploeesDetales getEmpDetales() {
+        return empDetales;
+    }
+
+    public void setEmpDetales(EmploeesDetales empDetales) {
+        this.empDetales = empDetales;
     }
 
     public void setEmpNo(int empNo) {
